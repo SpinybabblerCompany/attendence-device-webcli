@@ -15,6 +15,22 @@ function App() {
    	let image_data_url = canvasElement.toDataURL('image/jpeg');
 
    	console.log(image_data_url);
+
+     
+     
+     {/*
+     // @ts-ignore */}
+    let barcodeDetector = new BarcodeDetector({formats: ['code_39', 'codabar', 'ean_13', 'qr_code']});
+    
+    {/*
+     // @ts-ignore */}
+    barcodeDetector.detect(videoRef.current).then(detected => {
+      console.log(detected)
+    })
+
+    console.log('hey')
+
+
   }
 
   useEffect(() => {
